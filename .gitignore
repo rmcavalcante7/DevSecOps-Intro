@@ -29,3 +29,21 @@ node_modules/
 .venv/
 .DS_Store
 *.swp
+
+
+# Local Codex workspace
+.codex/
+.aiassistant/
+AGENTS.md
+NaoUsarcodex/
+
+
+README.md
+
+# Lab 4 scan outputs - local evidence only
+labs/lab4/grype-from-sbom.json
+labs/lab4/grype-from-sbom.txt
+labs/lab4/trivy.json
+
+# Local installer
+trivy_*.deb
