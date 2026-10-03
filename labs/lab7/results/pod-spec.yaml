@@ -1,0 +1,131 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2026-10-03T09:16:52Z"
+    generateName: juice-shop-657f4f4c48-
+    generation: 1
+    labels:
+      app: juice-shop
+      pod-template-hash: 657f4f4c48
+    name: juice-shop-657f4f4c48-45ncc
+    namespace: juice-shop
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: juice-shop-657f4f4c48
+      uid: bc23f06b-717d-4309-a206-6e70a02982ce
+    resourceVersion: "2464"
+    uid: 12d3ff45-f127-4b44-a747-7e874f943821
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - image: bkimminich/juice-shop@sha256:fd58bdc9745416afce8184ee0666278a436574633ea7880365153a63bfd418b0
+      imagePullPolicy: IfNotPresent
+      name: juice-shop
+      ports:
+      - containerPort: 3000
+        protocol: TCP
+      resources:
+        limits:
+          cpu: 500m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: k3d-lab7-server-0
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      runAsNonRoot: true
+      runAsUser: 65532
+      seccompProfile:
+        type: RuntimeDefault
+    serviceAccount: juice-shop
+    serviceAccountName: juice-shop
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-03T09:17:39Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-03T09:16:52Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-03T09:17:39Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-03T09:17:39Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-03T09:16:52Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - allocatedResources:
+        cpu: 100m
+        memory: 128Mi
+      containerID: containerd://c6d68b94adaa07e7b599316986f62777518946578d59e4dff7390349e9064567
+      image: sha256:99779f57113bd47312e8fe7b264ff402ee41da76ddda7f2fc842a92ad51827ce
+      imageID: docker.io/bkimminich/juice-shop@sha256:fd58bdc9745416afce8184ee0666278a436574633ea7880365153a63bfd418b0
+      lastState: {}
+      name: juice-shop
+      ready: true
+      resources:
+        limits:
+          cpu: 500m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2026-10-03T09:17:38Z"
+      user:
+        linux:
+          gid: 65532
+          supplementalGroups:
+          - 65532
+          uid: 65532
+    hostIP: 172.19.0.2
+    hostIPs:
+    - ip: 172.19.0.2
+    phase: Running
+    podIP: 10.42.0.9
+    podIPs:
+    - ip: 10.42.0.9
+    qosClass: Burstable
+    startTime: "2026-10-03T09:16:52Z"
+kind: List
+metadata:
+  resourceVersion: ""
